@@ -28,16 +28,16 @@ const Preview = ({ preview }) => {
     return preview ? (
         <div className="flex flex-col gap-5 h-full">
             <div className="p-5 border border-slate-500 rounded-md h-full">
-                <p className="text-white text-regular" ref={draft}>
+                <p className="text-white text-regular text-sm" ref={draft}>
                     Thank you for choosing our real estate agency! It was a pleasure assisting you in finding your dream home. Your trust means the world to us, and we're here for any future needs.
                 </p>
             </div>
             <div className="flex justify-end items-center gap-3">
-                <button className="bg-blue-700 hover:bg-blue-600 text-white p-2 rounded inline-flex items-center gap-2" onClick={copy}>
+                <button className="bg-blue-700 hover:bg-blue-600 text-white p-2 rounded inline-flex items-center gap-2 text-sm" onClick={copy}>
                     <FontAwesomeIcon icon={faPaste} />
                     <span>Copy</span>
                 </button>
-                <button className="bg-slate-700 hover:bg-slate-600 text-white p-2 rounded inline-flex items-center gap-2" onClick={handleRegenerate}>
+                <button className="bg-slate-700 hover:bg-slate-600 text-white p-2 rounded inline-flex items-center gap-2 text-sm" onClick={handleRegenerate}>
                     {regenerate ? (
                         <ClipLoader
                             color="#fff"
@@ -61,7 +61,7 @@ const Preview = ({ preview }) => {
             <div className="p-5 border border-slate-500 rounded-md h-full flex justify-center items-center">
                 <p className="flex flex-col gap-3 opacity-40 text-white">
                     <FontAwesomeIcon icon={faWandMagicSparkles} />
-                    <span className="font-regular w-3/4 text-center m-auto">Preview Will be Generated here</span>
+                    <span className="font-regular w-3/4 text-center m-auto text-sm">Preview Will be Generated here</span>
                 </p>
             </div>
             <hr className="h-1 border-0 dark:bg-gray-700" />

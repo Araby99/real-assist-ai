@@ -5,11 +5,11 @@ const Email = ({ toneActive, setToneActive, lengthActive, setLengthActive }) => 
     return (
         <div className="flex flex-col gap-3">
             <div className="p-7 border border-slate-500 rounded-md flex flex-col gap-5">
-                <p className="font-semi-bold text-white flex gap-2 items-center">
+                <p className="font-semi-bold text-white flex gap-2 items-center text-sm">
                     <FontAwesomeIcon icon={faVolumeHigh} />
                     Choose Tone
                 </p>
-                <div className="flex gap-3">
+                <div className="flex gap-3 text-sm">
                     <button className={`${toneActive === "professional" ? "bg-blue-500 hover:bg-blue-600 text-white" : "bg-gray-700 hover:bg-gray-600 color-859BB4"} py-1 px-2 rounded inline-flex items-center gap-2`} onClick={() => setToneActive("professional")}>
                         <span>Professional</span>
                     </button>
@@ -22,11 +22,11 @@ const Email = ({ toneActive, setToneActive, lengthActive, setLengthActive }) => 
                 </div>
             </div>
             <div className="p-7 border border-slate-500 rounded-md flex flex-col gap-5">
-                <p className="font-semi-bold text-white flex gap-2 items-center">
+                <p className="font-semi-bold text-white flex gap-2 items-center text-sm">
                     <FontAwesomeIcon icon={faAlignJustify} />
                     Paragraph Length
                 </p>
-                <div className="flex gap-3">
+                <div className="flex gap-3 text-sm">
                     <button className={`${lengthActive === "short" ? "bg-blue-500 hover:bg-blue-600 text-white" : "bg-gray-700 hover:bg-gray-600 color-859BB4"} py-1 px-2 rounded inline-flex items-center gap-2`} onClick={() => setLengthActive("short")}>
                         <span>Short</span>
                     </button>
@@ -38,7 +38,7 @@ const Email = ({ toneActive, setToneActive, lengthActive, setLengthActive }) => 
                     </button>
                 </div>
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 text-sm">
                 <p className="font-semi-bold text-white flex gap-2 items-center">
                     <FontAwesomeIcon icon={faPencil} />
                     Input Command

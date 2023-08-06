@@ -7,7 +7,7 @@ const User = ({ setClose }) => {
             <div className="flex justify-between items-center">
                 <div className="flex gap-3 items-center">
                     <img src="images/user.png" alt="User" className="border-circle" />
-                    <p className="text-white leading-normal">Dan Corkill</p>
+                    <p className="text-white leading-normal text-sm">Dan Corkill</p>
                 </div>
                 <div className="h-full aspect-square flex justify-center rounded-md text-2xl cursor-pointer items-center bg-slate-600 text-white" onClick={() => setClose(true)}>
                     <FontAwesomeIcon icon={faXmark} />
