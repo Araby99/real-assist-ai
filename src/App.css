@@ -1,38 +1,32 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: PoppinsMedium;
+    src: url(../public/fonts/Poppins-Medium.ttf);
+}
+@font-face {
+    font-family: PoppinsRegular;
+    src: url(../public/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: PoppinsSemiBold;
+    src: url(../public/fonts/Poppins-SemiBold.ttf);
+}
+.extenstion-container {
+    font-family: PoppinsMedium;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-405974 {
+    color: #405974;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.font-regular {
+    font-family: PoppinsRegular;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.font-semi-bold {
+    font-family: PoppinsSemiBold;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.color-859BB4 {
+    color: #859BB4;
 }
