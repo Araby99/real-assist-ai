@@ -30,3 +30,14 @@
 .color-859BB4 {
     color: #859BB4;
 }
+.setting-gear {
+    animation: gear 4s infinite linear;
+}
+@keyframes gear {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}

@@ -19,7 +19,7 @@ const Generate = ({ setPreview, typeActive, toneActive, lengthActive }) => {
         }, 2000);
     }
     return (
-        <button className="bg-blue-700 hover:bg-blue-600 text-white p-3 rounded gap-2 w-full block text-center text-sm" onClick={handleGenerate}>
+        <button className={`bg-blue-700 hover:bg-blue-600 text-white p-3 rounded gap-2 w-full block text-center text-sm ${generate ? "cursor-not-allowed" : null}`} disabled={generate} onClick={handleGenerate}>
             {generate ? (
                 <ClipLoader
                     color="#fff"

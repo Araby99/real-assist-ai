@@ -37,7 +37,7 @@ const Preview = ({ preview }) => {
                     <FontAwesomeIcon icon={faPaste} />
                     <span>Copy</span>
                 </button>
-                <button className="bg-slate-700 hover:bg-slate-600 text-white p-2 rounded inline-flex items-center gap-2 text-sm" onClick={handleRegenerate}>
+                <button className={`bg-slate-700 hover:bg-slate-600 text-white p-2 rounded inline-flex items-center gap-2 text-sm ${regenerate ? "cursor-not-allowed" : null}`} disabled={regenerate} onClick={handleRegenerate}>
                     {regenerate ? (
                         <ClipLoader
                             color="#fff"
