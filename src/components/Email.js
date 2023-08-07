@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const Email = ({ toneActive, setToneActive, lengthActive, setLengthActive }) => {
     return (
         <div className="flex flex-col gap-3">
-            <div className="p-7 border border-slate-500 rounded-md flex flex-col gap-5">
+            <div className="p-3 border border-slate-500 rounded-md flex flex-col gap-5">
                 <p className="font-semi-bold text-white flex gap-2 items-center text-sm">
                     <FontAwesomeIcon icon={faVolumeHigh} />
                     Choose Tone
@@ -21,7 +21,7 @@ const Email = ({ toneActive, setToneActive, lengthActive, setLengthActive }) => 
                     </button>
                 </div>
             </div>
-            <div className="p-7 border border-slate-500 rounded-md flex flex-col gap-5">
+            <div className="p-3 border border-slate-500 rounded-md flex flex-col gap-5">
                 <p className="font-semi-bold text-white flex gap-2 items-center text-sm">
                     <FontAwesomeIcon icon={faAlignJustify} />
                     Paragraph Length
