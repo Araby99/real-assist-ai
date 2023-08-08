@@ -1,10 +1,10 @@
 import { faPaste, faRotateRight, faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
 import ClipLoader from "react-spinners/ClipLoader";
 
-const Preview = ({ preview }) => {
+const Preview = ({ preview, stringResponse, setStringResponse }) => {
     const draft = useRef(null);
     const copy = () => {
         navigator.clipboard.writeText(draft.current.innerText);
@@ -19,17 +19,49 @@ const Preview = ({ preview }) => {
     const [regenerate, setRegenerate] = useState(false);
     const handleRegenerate = () => {
         setRegenerate(true);
+        setStringResponse("");
         // some api calls
         setTimeout(() => {
-            // as callback function
+            setStringResponse("Thank you for choosing our real estate agency! It was a pleasure assisting you in finding your dream home. Your trust means the world to us, and we're here for any future needs.")
             setRegenerate(false)
         }, 2000);
     }
+    const [completedTyping, setCompletedTyping] = useState(false);
+    const [displayResponse, setDisplayResponse] = useState("");
+    useEffect(() => {
+        setCompletedTyping(false);
+
+        let i = 0;
+
+        const intervalId = setInterval(() => {
+            setDisplayResponse(stringResponse.slice(0, i));
+
+            i++;
+
+            if (i > stringResponse.length) {
+                clearInterval(intervalId);
+                setCompletedTyping(true);
+            }
+        }, 30);
+
+        return () => clearInterval(intervalId);
+    }, [stringResponse]);
     return preview ? (
         <div className="flex flex-col gap-5 h-full">
             <div className="p-5 border border-slate-500 rounded-md h-full">
                 <p className="text-white text-regular text-sm" ref={draft}>
-                    Thank you for choosing our real estate agency! It was a pleasure assisting you in finding your dream home. Your trust means the world to us, and we're here for any future needs.
+                    <span>
+                        {displayResponse}
+                        {!completedTyping && (
+                            <svg
+                                viewBox="8 4 8 16"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="cursor"
+                            >
+                                <rect x="10" y="6" width="4" height="12" fill="#fff" />
+                            </svg>
+                        )}
+                    </span>
                 </p>
             </div>
             <div className="flex justify-end items-center gap-3">
@@ -54,7 +86,6 @@ const Preview = ({ preview }) => {
                     )}
                 </button>
             </div>
-            <hr className="h-1 border-0 dark:bg-gray-700" />
         </div>
     ) : (
         <div className="flex flex-col gap-5 h-full">
@@ -64,7 +95,6 @@ const Preview = ({ preview }) => {
                     <span className="font-regular w-3/4 text-center m-auto text-sm">Preview Will be Generated here</span>
                 </p>
             </div>
-            <hr className="h-1 border-0 dark:bg-gray-700" />
         </div>
     );
 }
